@@ -30,6 +30,16 @@ const router = createRouter({
             //       },
             //    ],
             },
+            {
+                path: '/privacy-policy',
+               name: 'privacyPolicy',
+               component: () => import('@/pages/PrivacyPolicy.vue'),
+            },
+            {
+                path: '/terms',
+               name: 'terms',
+               component: () => import('@/pages/Terms.vue'),
+            }
             
            
          ],
