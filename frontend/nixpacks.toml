@@ -1,0 +1,15 @@
+
+[build]
+install = "npm install"
+# The command to build your Vue.js application
+# Default is `npm run build` but if you're using yarn or have a custom script, adjust accordingly.
+command = "npm run build"
+
+[static]
+# Directory where your built files are located
+# By default, Vue.js outputs to `dist`
+directory = "dist"
+
+[variables]
+# Define environment variables here if needed
+VITE_BACKEND_URL = "https://a440wgk0kw4cs8k4soocgkc4.hrarmy.in"
