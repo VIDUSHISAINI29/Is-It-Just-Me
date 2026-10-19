@@ -1,51 +1,40 @@
-import { createRouter, createWebHistory, useRouter } from 'vue-router';
 
+import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-   history: createWebHistory(import.meta.env.BASE_URL),
-   scrollBehavior(to, from, savedPosition) {
-      // Always scroll to top on navigation
-      return { top: 0 };
-   },
-   routes: [
-      {
-         path: '/',
-         redirect: '/home',
-      },
-      {
-         path: '/',
-         component: () => import('@/layout/AppLayout.vue'),
-         // beforeEnter: authGuard,
-         children: [
-            {
-               path: '/home',
-               name: 'home',
-               component: () => import('@/pages/home/Homepage.vue'),
-            //    children: [
-            //       {
-            //          path: ':uri',
-            //          name: 'homeContent',
-            //          component: () => import('@/pages/home/Content.vue'),
-            //          props: true,
-            //       },
-            //    ],
-            },
-            {
-                path: '/privacy-policy',
-               name: 'privacyPolicy',
-               component: () => import('@/pages/PrivacyPolicy.vue'),
-            },
-            {
-                path: '/terms',
-               name: 'terms',
-               component: () => import('@/pages/Terms.vue'),
-            }
-            
-           
-         ],
-      },
-  
-   ],
-});
+  history: createWebHistory(import.meta.env.BASE_URL),
 
-export default router;
+  scrollBehavior() {
+    return { top: 0 }
+  },
+
+  routes: [
+    {
+      path: '/',
+      component: () => import('@/layout/AppLayout.vue'),
+      children: [
+        {
+          path: '',
+          redirect: '/home',
+        },
+        {
+          path: 'home',
+          name: 'home',
+          component: () => import('@/pages/home/Homepage.vue'),
+        },
+        {
+          path: 'privacy',
+          name: 'privacyPolicy',
+          component: () => import('@/pages/PrivacyPolicy.vue'),
+        },
+        {
+          path: 'terms',
+          name: 'terms',
+          component: () => import('@/pages/Terms.vue'),
+        },
+      ],
+    },
+  ],
+})
+
+export default router
