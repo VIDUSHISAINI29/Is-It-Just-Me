@@ -18,17 +18,17 @@ const router = createRouter({
           redirect: '/home',
         },
         {
-          path: 'home',
+          path: '/home',
           name: 'home',
           component: () => import('@/pages/home/Homepage.vue'),
         },
         {
-          path: 'privacy',
+          path: '/privacy',
           name: 'privacyPolicy',
           component: () => import('@/pages/PrivacyPolicy.vue'),
         },
         {
-          path: 'terms',
+          path: '/terms',
           name: 'terms',
           component: () => import('@/pages/Terms.vue'),
         },
