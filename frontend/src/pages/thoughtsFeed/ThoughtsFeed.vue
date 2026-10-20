@@ -6,7 +6,7 @@ import { useAuth } from '../../lib/auth.js'
 
 const { user } = useAuth()
 
-const PAGE_SIZE = 2
+const PAGE_SIZE = 5
 const VISITOR_KEY = 'is-it-just-me-visitor-id'
 
 const thoughts = ref([])
